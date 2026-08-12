@@ -11,6 +11,7 @@ updates:
         # lettuce v7 needs refactoring on our end
         versions:
           - ">= 7"
+      - dependency-name: "io.netty:netty-bom"
     open-pull-requests-limit: 10
     labels:
       - dependencies
