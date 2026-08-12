@@ -24,6 +24,13 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-bom</artifactId>
+                <version>4.1.137.Final</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
                 <groupId>io.dropwizard</groupId>
                 <artifactId>dropwizard-dependencies</artifactId>
                 <version>5.0.2</version>
