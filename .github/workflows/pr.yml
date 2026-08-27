@@ -15,4 +15,4 @@ jobs:
 
   dependency-review:
     name: Dependency Review scan
-    uses: alphagov/pay-ci/.github/workflows/_run-dependency-review.yml@master
+    uses: govuk-pay/pay-ci/.github/workflows/_run-dependency-review.yml@master
