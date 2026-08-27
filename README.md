@@ -11,11 +11,11 @@ Configuration of the application is performed via environment variables, some of
 | `ADMIN_PORT`                | No        | 8081           | The port number to listen for Dropwizard admin requests on.                                                |
 | `ALLOW_HTTP_FOR_RETURN_URL` | No        | false          | Whether to allow service return URLs to be non-HTTPS                                                       |
 | `BIND_HOST`                 | No        | 127.0.0.1      | The IP address for the application to bind to.                                                             |
-| `CONNECTOR_URL`             | Yes       | -              | The URL to the [connector](https://github.com/alphagov/pay-connector) service                              |
+| `CONNECTOR_URL`             | Yes       | -              | The URL to the [connector](https://github.com/govuk-pay/pay-connector) service                              |
 | `DISABLE_INTERNAL_HTTPS`    | No        | false          | Disable secure connection for calls to internal APIs                                                       |
 | `PORT`                      | No        | 8080           | The port number to listen for requests on.                                                                 |
 | `PUBLICAPI_BASE`            | Yes       | -              | The base URL clients can use to reach the API. e.g. http://api.example.org:1234/                           |
-| `PUBLIC_AUTH_URL`           | Yes       | -              | The URL to the [publicauth](https://github.com/alphagov/pay-publicauth) service                            |
+| `PUBLIC_AUTH_URL`           | Yes       | -              | The URL to the [publicauth](https://github.com/govuk-pay/pay-publicauth) service                            |
 | `REDIS_URL`                 | No        | localhost:6379 | The location of the Redis endpoint to store rate-limiter information in                                    |
 | `REDIS_SSL`                 | No        | false          | Whether to establish TLS encrypted connections to the Redis instance                                       |
 | `TOKEN_API_HMAC_SECRET`     | Yes       | -              | HMAC secret to be used to validate that the given token is genuine (API Key = Token + HMAC (Token, Secret) |
@@ -48,7 +48,7 @@ Read our  [developer documentation](https://docs.payments.service.gov.uk/#gov-uk
 using the API.
 
 For more detailed information you can use
-our [OpenAPI specifiation](https://github.com/alphagov/pay-publicapi/blob/master/openapi/publicapi_spec.json).
+our [OpenAPI specifiation](https://github.com/govuk-pay/pay-publicapi/blob/master/openapi/publicapi_spec.json).
 
 ## Dependencies
 
