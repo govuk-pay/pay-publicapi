@@ -12,7 +12,7 @@
         <hamcrest.version>3.0</hamcrest.version>
         <pay-java-commons.version>1.0.20260901094800</pay-java-commons.version>
         <prometheus.version>0.16.0</prometheus.version>
-        <swagger.lib.version>2.2.54</swagger.lib.version>
+        <swagger.lib.version>2.2.55</swagger.lib.version>
         <pact.version>4.7.5</pact.version>
         <PACT_BROKER_URL/>
         <PACT_BROKER_USERNAME/>
