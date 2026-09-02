@@ -12,6 +12,9 @@ updates:
         versions:
           - ">= 7"
       - dependency-name: "io.netty:netty-bom"
+    cooldown:
+      exclude:
+        - "uk.gov.service.payments:*"
     open-pull-requests-limit: 10
     labels:
       - dependencies
