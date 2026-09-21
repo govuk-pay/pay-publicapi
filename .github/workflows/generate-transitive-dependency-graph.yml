@@ -9,4 +9,4 @@ permissions:
 
 jobs:
   generate-dependency-graph:
-    uses: govuk-pay/pay-ci/.github/workflows/_run-java-transitive-dependency-update.yml@master
+    uses: govuk-pay/pay-ci/.github/workflows/_run-java-transitive-dependency-update.yml@8597f9957716cb928c22ed66ee0704a24798ce6e
