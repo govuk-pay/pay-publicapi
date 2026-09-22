@@ -18,6 +18,6 @@ permissions:
 jobs:
   analyze:
     name: "Run CodeQL"
-    uses: govuk-pay/pay-ci/.github/workflows/_run-codeql-scan.yml@master
+    uses: govuk-pay/pay-ci/.github/workflows/_run-codeql-scan.yml@8597f9957716cb928c22ed66ee0704a24798ce6e
     with:
       is_java_repo: true
