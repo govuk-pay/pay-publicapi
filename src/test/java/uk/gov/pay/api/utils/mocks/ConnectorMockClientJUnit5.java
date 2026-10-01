@@ -59,6 +59,8 @@ import static uk.gov.service.payments.commons.model.ErrorIdentifier.ACCOUNT_NOT_
 import static uk.gov.service.payments.commons.model.ErrorIdentifier.AGREEMENT_NOT_ACTIVE;
 import static uk.gov.service.payments.commons.model.ErrorIdentifier.AGREEMENT_NOT_FOUND;
 import static uk.gov.service.payments.commons.model.ErrorIdentifier.AMOUNT_BELOW_MINIMUM;
+import static uk.gov.service.payments.commons.model.ErrorIdentifier.AMOUNT_BELOW_MINIMUM_FOR_ADYEN;
+import static uk.gov.service.payments.commons.model.ErrorIdentifier.AMOUNT_BELOW_MINIMUM_FOR_STRIPE;
 import static uk.gov.service.payments.commons.model.ErrorIdentifier.AUTHORISATION_API_NOT_ALLOWED;
 import static uk.gov.service.payments.commons.model.ErrorIdentifier.CARD_NUMBER_IN_PAYMENT_LINK_REFERENCE_REJECTED;
 import static uk.gov.service.payments.commons.model.ErrorIdentifier.GENERIC;
@@ -356,6 +358,14 @@ public class ConnectorMockClientJUnit5 extends BaseConnectorMockClientJUnit5 {
 
     public void respondAmountBelowMinimum(String gatewayAccountId) {
         mockCreateCharge(gatewayAccountId, withStatusAndErrorMessage(UNPROCESSABLE_ENTITY_422, "anything", AMOUNT_BELOW_MINIMUM));
+    }
+
+    public void respondAmountBelowMinimumForAdyen(String gatewayAccountId) {
+        mockCreateCharge(gatewayAccountId, withStatusAndErrorMessage(UNPROCESSABLE_ENTITY_422, "anything", AMOUNT_BELOW_MINIMUM_FOR_ADYEN));
+    }
+
+    public void respondAmountBelowMinimumForStripe(String gatewayAccountId) {
+        mockCreateCharge(gatewayAccountId, withStatusAndErrorMessage(UNPROCESSABLE_ENTITY_422, "anything", AMOUNT_BELOW_MINIMUM_FOR_STRIPE));
     }
 
     public void respondMotoPaymentNotAllowed(String gatewayAccountId) {
