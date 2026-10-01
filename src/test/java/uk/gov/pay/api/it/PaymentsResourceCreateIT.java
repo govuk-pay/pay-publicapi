@@ -754,10 +754,26 @@ public class PaymentsResourceCreateIT extends PaymentResourceITestBase {
     }
 
     @Test
-    void createPayment_responseWith422_whenAmountBelowMinimum() {
+    void createPayment_responseWith422_whenAmountBelowMinimumForAdyen() {
         publicAuthMockClient.mapBearerTokenToAccountId(API_KEY, GATEWAY_ACCOUNT_ID);
 
-        connectorMockClient.respondAmountBelowMinimum(GATEWAY_ACCOUNT_ID);
+        connectorMockClient.respondAmountBelowMinimumForAdyen(GATEWAY_ACCOUNT_ID);
+
+        postPaymentResponse(SUCCESS_PAYLOAD)
+                .statusCode(422)
+                .contentType(JSON)
+                .body("code", is("P0102"))
+                .body("field", is("amount"))
+                .body("description", is("Invalid attribute value: amount. Must be greater than or equal to 21. Refer to https://docs.payments.service.gov.uk/making_payments/#amount"));
+
+        connectorMockClient.verifyCreateChargeConnectorRequest(GATEWAY_ACCOUNT_ID, SUCCESS_PAYLOAD);
+    }
+
+    @Test
+    void createPayment_responseWith422_whenAmountBelowMinimumForStripe() {
+        publicAuthMockClient.mapBearerTokenToAccountId(API_KEY, GATEWAY_ACCOUNT_ID);
+
+        connectorMockClient.respondAmountBelowMinimumForStripe(GATEWAY_ACCOUNT_ID);
 
         postPaymentResponse(SUCCESS_PAYLOAD)
                 .statusCode(422)
