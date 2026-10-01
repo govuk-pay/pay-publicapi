@@ -1,5 +1,6 @@
 package uk.gov.pay.api.exception.mapper;
 
+import jakarta.ws.rs.core.Response;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -11,7 +12,6 @@ import uk.gov.pay.api.exception.CreateChargeException;
 import uk.gov.pay.api.model.RequestError;
 import uk.gov.service.payments.commons.model.ErrorIdentifier;
 
-import jakarta.ws.rs.core.Response;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -24,6 +24,8 @@ import static uk.gov.service.payments.commons.model.ErrorIdentifier.ACCOUNT_NOT_
 import static uk.gov.service.payments.commons.model.ErrorIdentifier.AGREEMENT_NOT_ACTIVE;
 import static uk.gov.service.payments.commons.model.ErrorIdentifier.AGREEMENT_NOT_FOUND;
 import static uk.gov.service.payments.commons.model.ErrorIdentifier.AMOUNT_BELOW_MINIMUM;
+import static uk.gov.service.payments.commons.model.ErrorIdentifier.AMOUNT_BELOW_MINIMUM_FOR_ADYEN;
+import static uk.gov.service.payments.commons.model.ErrorIdentifier.AMOUNT_BELOW_MINIMUM_FOR_STRIPE;
 import static uk.gov.service.payments.commons.model.ErrorIdentifier.AUTHORISATION_API_NOT_ALLOWED;
 import static uk.gov.service.payments.commons.model.ErrorIdentifier.INCORRECT_AUTHORISATION_MODE_FOR_SAVE_PAYMENT_INSTRUMENT_TO_AGREEMENT;
 import static uk.gov.service.payments.commons.model.ErrorIdentifier.INVALID_ATTRIBUTE_VALUE;
@@ -61,6 +63,8 @@ class CreateChargeExceptionMapperTest {
         return Stream.of(
                 arguments(ZERO_AMOUNT_NOT_ALLOWED, false, "Invalid attribute value: amount. Must be greater than or equal to 1. Refer to https://docs.payments.service.gov.uk/making_payments/#amount", 422, "P0102"),
                 arguments(AMOUNT_BELOW_MINIMUM, false, "Invalid attribute value: amount. Must be greater than or equal to 30. Refer to https://docs.payments.service.gov.uk/making_payments/#amount", 422, "P0102"),
+                arguments(AMOUNT_BELOW_MINIMUM_FOR_ADYEN, false, "Invalid attribute value: amount. Must be greater than or equal to 21. Refer to https://docs.payments.service.gov.uk/making_payments/#amount", 422, "P0102"),
+                arguments(AMOUNT_BELOW_MINIMUM_FOR_STRIPE, false, "Invalid attribute value: amount. Must be greater than or equal to 30. Refer to https://docs.payments.service.gov.uk/making_payments/#amount", 422, "P0102"),
                 arguments(MOTO_NOT_ALLOWED, false, "MOTO payments are not enabled for this account. Please contact support if you would like to process MOTO payments - https://www.payments.service.gov.uk/support/ .", 422, "P0196"),
                 arguments(ACCOUNT_DISABLED, false, "GOV.UK Pay has disabled payment and refund creation on this account. Contact support with your error code - https://www.payments.service.gov.uk/support/ .", 403, "P0941"),
                 arguments(TELEPHONE_PAYMENT_NOTIFICATIONS_NOT_ALLOWED, false, "Access to this resource is not enabled for this account. Contact support with your error code - https://www.payments.service.gov.uk/support/ .", 403, "P0930"),

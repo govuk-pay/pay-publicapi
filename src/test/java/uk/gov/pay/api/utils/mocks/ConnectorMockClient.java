@@ -27,12 +27,12 @@ import static com.github.tomakehurst.wiremock.client.WireMock.post;
 import static com.github.tomakehurst.wiremock.client.WireMock.postRequestedFor;
 import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
 import static com.github.tomakehurst.wiremock.client.WireMock.urlPathEqualTo;
-import static java.lang.String.format;
-import static java.util.Arrays.asList;
-import static java.util.Optional.ofNullable;
 import static jakarta.ws.rs.core.HttpHeaders.CONTENT_TYPE;
 import static jakarta.ws.rs.core.HttpHeaders.LOCATION;
 import static jakarta.ws.rs.core.MediaType.APPLICATION_JSON;
+import static java.lang.String.format;
+import static java.util.Arrays.asList;
+import static java.util.Optional.ofNullable;
 import static org.eclipse.jetty.http.HttpStatus.ACCEPTED_202;
 import static org.eclipse.jetty.http.HttpStatus.BAD_REQUEST_400;
 import static org.eclipse.jetty.http.HttpStatus.CONFLICT_409;
@@ -59,6 +59,8 @@ import static uk.gov.service.payments.commons.model.ErrorIdentifier.ACCOUNT_NOT_
 import static uk.gov.service.payments.commons.model.ErrorIdentifier.AGREEMENT_NOT_ACTIVE;
 import static uk.gov.service.payments.commons.model.ErrorIdentifier.AGREEMENT_NOT_FOUND;
 import static uk.gov.service.payments.commons.model.ErrorIdentifier.AMOUNT_BELOW_MINIMUM;
+import static uk.gov.service.payments.commons.model.ErrorIdentifier.AMOUNT_BELOW_MINIMUM_FOR_ADYEN;
+import static uk.gov.service.payments.commons.model.ErrorIdentifier.AMOUNT_BELOW_MINIMUM_FOR_STRIPE;
 import static uk.gov.service.payments.commons.model.ErrorIdentifier.AUTHORISATION_API_NOT_ALLOWED;
 import static uk.gov.service.payments.commons.model.ErrorIdentifier.CARD_NUMBER_IN_PAYMENT_LINK_REFERENCE_REJECTED;
 import static uk.gov.service.payments.commons.model.ErrorIdentifier.GENERIC;
@@ -356,6 +358,14 @@ public class ConnectorMockClient extends BaseConnectorMockClient {
 
     public void respondAmountBelowMinimum(String gatewayAccountId) {
         mockCreateCharge(gatewayAccountId, withStatusAndErrorMessage(UNPROCESSABLE_ENTITY_422, "anything", AMOUNT_BELOW_MINIMUM));
+    }
+
+    public void respondAmountBelowMinimumForAdyen(String gatewayAccountId) {
+        mockCreateCharge(gatewayAccountId, withStatusAndErrorMessage(UNPROCESSABLE_ENTITY_422, "anything", AMOUNT_BELOW_MINIMUM_FOR_ADYEN));
+    }
+
+    public void respondAmountBelowMinimumForStripe(String gatewayAccountId) {
+        mockCreateCharge(gatewayAccountId, withStatusAndErrorMessage(UNPROCESSABLE_ENTITY_422, "anything", AMOUNT_BELOW_MINIMUM_FOR_STRIPE));
     }
 
     public void respondMotoPaymentNotAllowed(String gatewayAccountId) {
