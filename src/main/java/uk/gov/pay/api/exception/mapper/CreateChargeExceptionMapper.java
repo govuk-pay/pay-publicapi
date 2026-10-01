@@ -66,7 +66,7 @@ public class CreateChargeExceptionMapper implements ExceptionMapper<CreateCharge
                     requestError = aRequestError("amount", CREATE_PAYMENT_VALIDATION_ERROR,
                             "Must be greater than or equal to 21. Refer to https://docs.payments.service.gov.uk/making_payments/#amount");
                 }
-                case AMOUNT_BELOW_MINIMUM_FOR_STRIPE, AMOUNT_BELOW_MINIMUM -> {
+                case AMOUNT_BELOW_MINIMUM_FOR_STRIPE -> {
                     statusCode = HttpStatus.UNPROCESSABLE_ENTITY_422;
                     requestError = aRequestError("amount", CREATE_PAYMENT_VALIDATION_ERROR,
                             "Must be greater than or equal to 30. Refer to https://docs.payments.service.gov.uk/making_payments/#amount");
