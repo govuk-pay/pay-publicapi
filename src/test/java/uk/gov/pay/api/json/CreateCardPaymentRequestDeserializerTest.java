@@ -3,12 +3,12 @@ package uk.gov.pay.api.json;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import junitparams.converters.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -475,8 +475,12 @@ class CreateCardPaymentRequestDeserializerTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"null", "\"true\"", "0"})
-    void deserialize_shouldThrowValidationException_whenMotoIsNotABoolean(@Nullable String value) throws Exception {
+    @CsvSource(nullValues = "null", textBlock = """
+            null
+            \"true\"
+            0 
+            """)
+    void deserialize_shouldThrowValidationException_whenMotoIsNotABoolean(String value) throws Exception {
         // language=JSON
         String json = "{\n" +
                 "  \"amount\": 1337,\n" +
