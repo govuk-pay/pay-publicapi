@@ -27,6 +27,10 @@ public class RefundResponse {
     private String createdDate;
     @Schema(example = "120", description = "The amount refunded to the user in pence.", accessMode = READ_ONLY)
     private Long amount;
+    @Schema(example = "2", accessMode = READ_ONLY)
+    private Long fee;    
+    @Schema(example = "-122", accessMode = READ_ONLY)
+    private Long netAmount;
     @JsonProperty("_links")
     private RefundLinksForSearch links;
     @Schema(example = "success", 
@@ -39,6 +43,8 @@ public class RefundResponse {
     private RefundResponse(RefundFromConnector refund, URI selfLink, URI paymentLink) {
         this.refundId = refund.getRefundId();
         this.amount = refund.getAmount();
+        this.fee = refund.getFee();
+        this.netAmount = refund.getNetAmount();
         this.status = refund.getStatus();
         this.createdDate = refund.getCreatedDate();
         this.links = new RefundLinksForSearch();
@@ -51,6 +57,8 @@ public class RefundResponse {
     private RefundResponse(RefundTransactionFromLedger refund, URI selfLink, URI paymentLink) {
         this.refundId = refund.getTransactionId();
         this.amount = refund.getAmount();
+        this.fee = refund.getFee();
+        this.netAmount = refund.getNetAmount();
         this.status = refund.getState().getStatus();
         this.createdDate = refund.getCreatedDate();
         this.settlementSummary = refund.getSettlementSummary();
@@ -106,7 +114,11 @@ public class RefundResponse {
     public Long getAmount() {
         return amount;
     }
-
+    
+    public Long getFee() { return fee;}
+    
+    public Long getNetAmount() { return netAmount;}
+    
     public String getStatus() {
         return status;
     }

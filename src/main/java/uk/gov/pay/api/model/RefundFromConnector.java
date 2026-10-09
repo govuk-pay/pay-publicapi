@@ -14,7 +14,12 @@ public class RefundFromConnector {
 
     private Long amount;
     private String status;
+    
+    private Long fee;
 
+    @JsonProperty(value = "net_amount")
+    private Long netAmount;
+    
     public String getRefundId() {
         return refundId;
     }
@@ -22,6 +27,10 @@ public class RefundFromConnector {
     public Long getAmount() {
         return amount;
     }
+    
+    public Long getFee() { return fee;}
+
+    public Long getNetAmount() { return netAmount;}
 
     public String getStatus() {
         return status;
@@ -37,6 +46,8 @@ public class RefundFromConnector {
                 "refundId='" + refundId + '\'' +
                 ", createdDate='" + createdDate + '\'' +
                 ", amount=" + amount +
+                ", fee=" + fee +
+                ", netAmount=" + netAmount +
                 ", status='" + status + '\'' +
                 '}';
     }
