@@ -249,6 +249,16 @@
             <artifactId>testing-dropwizard-5</artifactId>
             <version>${pay-java-commons.version}</version>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>au.com.dius</groupId>
+                    <artifactId>pact-jvm-provider-junit</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>au.com.dius</groupId>
+                    <artifactId>pact-jvm-consumer-junit</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>

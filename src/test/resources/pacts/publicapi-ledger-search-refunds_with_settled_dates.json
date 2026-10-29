@@ -128,7 +128,7 @@
               ]
             },
             "$.settlement_summary.settled_date": {
-              "matchers": [{ "date": "yyyy-MM-dd" }]
+              "matchers": [{ "datetime": "yyyy-MM-dd" }]
             },
             "$._links.self.href": {
               "matchers": [

@@ -76,7 +76,7 @@
               "matchers": [{"match": "type"}]
             },
             "$.created_date": {
-              "matchers": [{ "date": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" }]
+              "matchers": [{ "datetime": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" }]
             },
             "$.refund_summary.status": {
               "matchers": [{"match": "type"}]

@@ -95,7 +95,7 @@
             "$.events[0].updated": {
               "matchers": [
                 {
-                  "date": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                  "datetime": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
                 }
               ]
 
@@ -145,7 +145,7 @@
             "$.events[1].updated": {
               "matchers": [
                 {
-                  "date": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                  "datetime": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
                 }
               ]
 

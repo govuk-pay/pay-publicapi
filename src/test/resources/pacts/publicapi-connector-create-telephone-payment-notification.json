@@ -181,14 +181,14 @@
             "$.created_date": {
               "matchers": [
                 {
-                  "date": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                  "datetime": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
                 }
               ]
             },
             "$.authorised_date": {
               "matchers": [
                 {
-                  "date": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                  "datetime": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
                 }
               ]
             },

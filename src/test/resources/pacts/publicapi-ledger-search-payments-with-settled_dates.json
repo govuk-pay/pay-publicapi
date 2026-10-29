@@ -159,28 +159,28 @@
             "$.results[*].created_date": {
               "matchers": [
                 {
-                  "date": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                  "datetime": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
                 }
               ]
             },
             "$.results[*].settlement_summary.settled_date": {
               "matchers": [
                 {
-                  "date": "yyyy-MM-dd"
+                  "datetime": "yyyy-MM-dd"
                 }
               ]
             },
             "$.results[*].settlement_summary.capture_submit_time": {
               "matchers": [
                 {
-                  "date": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                  "datetime": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
                 }
               ]
             },
             "$.results[*].settlement_summary.captured_date": {
               "matchers": [
                 {
-                  "date": "yyyy-MM-dd"
+                  "datetime": "yyyy-MM-dd"
                 }
               ]
             }
