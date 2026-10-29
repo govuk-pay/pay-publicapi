@@ -91,14 +91,14 @@
             "$.results[*].created_date": {
               "matchers": [
                 {
-                  "date": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                  "regex": "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})\\.(\\d{3})Z"
                 }
               ]
             },
             "$.results[*].evidence_date": {
               "matchers": [
                 {
-                  "date": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                  "regex": "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})\\.(\\d{3})Z"
                 }
               ]
             },
@@ -145,7 +145,7 @@
               ]
             },
             "$.settlement_summary.settled_date": {
-              "matchers": [{ "date": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" }]
+              "matchers": [{ "regex": "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})\\.(\\d{3})Z" }]
             },
             "$.results[*].transaction_type": {
               "matchers": [

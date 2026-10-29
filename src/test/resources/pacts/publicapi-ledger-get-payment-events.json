@@ -56,28 +56,28 @@
             "$.transaction_id": {
               "matchers": [
                 {
-                  "match": "value"
+                  "match": "values"
                 }
               ]
             },
             "$.events[0].state.status": {
               "matchers": [
                 {
-                  "match": "value"
+                  "match": "values"
                 }
               ]
             },
             "$.events[0].state.finished": {
               "matchers": [
                 {
-                  "match": "value"
+                  "match": "values"
                 }
               ]
             },
             "$.events[0].timestamp": {
               "matchers": [
                 {
-                  "date": "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
+                  "regex": "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})\\.(\\d{3})Z"
                 }
               ]
 
@@ -85,35 +85,35 @@
             "$.events[1].state.status": {
               "matchers": [
                 {
-                  "match": "value"
+                  "match": "values"
                 }
               ]
             },
             "$.events[1].state.finished": {
               "matchers": [
                 {
-                  "match": "value"
+                  "match": "values"
                 }
               ]
             },
             "$.events[1].state.code": {
               "matchers": [
                 {
-                  "match": "value"
+                  "match": "values"
                 }
               ]
             },
             "$.events[1].state.message": {
               "matchers": [
                 {
-                  "match": "value"
+                  "match": "values"
                 }
               ]
             },
             "$.events[1].timestamp": {
               "matchers": [
                 {
-                  "date": "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'"
+                  "regex": "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})\\.(\\d{3})Z"
                 }
               ]
 
