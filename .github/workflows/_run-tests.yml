@@ -18,11 +18,11 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Detect secrets
-        uses: govuk-pay/pay-ci/actions/detect-secrets@042a7e3d823df3b1ba6cbab336f97c07e65dc4e9
+        uses: govuk-pay/pay-ci/actions/detect-secrets@2f600380181d780f79bc92c3f648a23c6f2ab17d # 0.0.2
 
   integration-tests:
     name: "Integration tests and publish pacts"
-    uses: govuk-pay/pay-ci/.github/workflows/_run-java-tests-and-publish-pacts.yml@67c10bdec6dad03624cee4ab798578e1ea429b97
+    uses: govuk-pay/pay-ci/.github/workflows/_run-java-tests-and-publish-pacts.yml@2f600380181d780f79bc92c3f648a23c6f2ab17d # 0.0.2
     with:
       publish_pacts: true
       check_for_openapi_file_changes: false
@@ -36,7 +36,7 @@ jobs:
   pact-providers-contract-tests:
     name: "Provider tests"
     needs: integration-tests
-    uses: govuk-pay/pay-ci/.github/workflows/_run-provider-pact-tests-for-consumer.yml@042a7e3d823df3b1ba6cbab336f97c07e65dc4e9
+    uses: govuk-pay/pay-ci/.github/workflows/_run-provider-pact-tests-for-consumer.yml@2f600380181d780f79bc92c3f648a23c6f2ab17d # 0.0.2
     strategy:
       matrix:
         provider: [ 'connector', 'ledger' ]
@@ -49,5 +49,5 @@ jobs:
       pact_broker_password: ${{ secrets.pact_broker_password }}
 
   check-docker-base-images-are-manifests:
-    uses: govuk-pay/pay-ci/.github/workflows/_validate_docker_image_is_manifest.yml@67c10bdec6dad03624cee4ab798578e1ea429b97
+    uses: govuk-pay/pay-ci/.github/workflows/_validate_docker_image_is_manifest.yml@2f600380181d780f79bc92c3f648a23c6f2ab17d # 0.0.2
 
