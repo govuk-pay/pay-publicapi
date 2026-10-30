@@ -104,7 +104,7 @@
             "$._embedded.refunds[0].created_date": {
               "matchers": [
                 {
-                  "match": "value"
+                  "match": "values"
                 }
               ]
             },
@@ -125,7 +125,7 @@
             "$._embedded.refunds[0].status": {
               "matchers": [
                 {
-                  "match": "value"
+                  "match": "values"
                 }
               ]
             },
@@ -155,7 +155,7 @@
             "$._embedded.refunds[1].created_date": {
               "matchers": [
                 {
-                  "match": "value"
+                  "match": "values"
                 }
               ]
             },
@@ -176,7 +176,7 @@
             "$._embedded.refunds[1].status": {
               "matchers": [
                 {
-                  "match": "value"
+                  "match": "values"
                 }
               ]
             },

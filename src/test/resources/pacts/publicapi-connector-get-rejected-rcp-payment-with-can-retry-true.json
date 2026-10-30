@@ -92,7 +92,7 @@
               "matchers": [{"match": "type"}]
             },
             "$.created_date": {
-              "matchers": [{ "date": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" }]
+              "matchers": [{ "regex": "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})\\.(\\d{3})Z" }]
             },
             "$.delayed_capture": {
               "matchers": [{"match": "type"}]

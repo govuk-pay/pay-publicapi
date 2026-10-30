@@ -100,7 +100,7 @@
                 "matchers": [{"match": "type"}]
               },
               "$.results[*].created_date": {
-                "matchers": [{ "date": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" }]
+                "matchers": [{ "regex": "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})\\.(\\d{3})Z" }]
               },
               "$.results[*].refund_summary.amount_available": {
                 "matchers": [{"match": "type"}]

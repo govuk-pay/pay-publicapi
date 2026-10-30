@@ -70,28 +70,28 @@
             "$.state.status": {
               "matchers": [
                 {
-                  "match": "value"
+                  "match": "values"
                 }
               ]
             },
             "$.state.finished": {
               "matchers": [
                 {
-                  "match": "value"
+                  "match": "values"
                 }
               ]
             },
             "$.created_date": {
               "matchers": [
                 {
-                  "match": "value"
+                  "match": "values"
                 }
               ]
             },
             "$.transaction_id": {
               "matchers": [
                 {
-                  "match": "value"
+                  "match": "values"
                 }
               ]
             }
