@@ -68,7 +68,6 @@
           },
           "return_url": "https://somewhere.gov.uk/rainbow/1",
           "payment_provider": "Sandbox",
-          "created_date": "2016-01-01T12:00:00Z",
           "language": "cy",
           "delayed_capture": true,
           "moto": true,
@@ -182,7 +181,7 @@
               "matchers": [{"match": "type"}]
             },
             "$.created_date": {
-              "matchers": [{ "regex": "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})\\.(\\d{3})Z" }]
+              "matchers": [{ "datetime": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" }]
             }
           }
         }

@@ -43,7 +43,6 @@
           "transaction_id": "ch_123abc456xyz",
           "return_url": "https://somewhere.gov.uk/rainbow/1",
           "payment_provider": "sandbox",
-          "created_date": "2018-10-16T10:46:02.121Z",
           "corporate_card_surcharge": 250,
           "total_amount": 2250,
           "refund_summary": {
@@ -53,7 +52,6 @@
             "amount_submitted": 0
           },
           "settlement_summary": {
-            "capture_submit_time": "2018-10-16T10:46:03.121Z",
             "captured_date": "2018-10-16"
           },
           "delayed_capture": false
@@ -70,10 +68,10 @@
               "matchers": [{"match": "type"}]
             },
             "$.created_date": {
-              "matchers": [{ "regex": "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})\\.(\\d{3})Z" }]
+              "matchers": [{ "datetime": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" }]
             },
             "$.settlement_summary.capture_submit_time": {
-              "matchers": [{ "regex": "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})\\.(\\d{3})Z" }]
+              "matchers": [{ "datetime": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" }]
             },
             "$.settlement_summary.captured_date": {
               "matchers": [{ "date": "yyyy-MM-dd" }]

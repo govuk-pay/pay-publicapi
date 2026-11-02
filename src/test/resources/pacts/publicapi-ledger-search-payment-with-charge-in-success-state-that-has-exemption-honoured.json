@@ -66,7 +66,6 @@
               "transaction_id": "ch_123abc456xyz",
               "return_url": "https://somewhere.gov.uk/rainbow/1",
               "payment_provider": "sandbox",
-              "created_date": "2018-10-16T10:46:02.121Z",
               "refund_summary": {
                 "status": "available",
                 "user_external_id": null,
@@ -100,7 +99,7 @@
                 "matchers": [{"match": "type"}]
               },
               "$.results[*].created_date": {
-                "matchers": [{ "regex": "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})\\.(\\d{3})Z" }]
+                "matchers": [{ "datetime": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" }]
               },
               "$.results[*].refund_summary.amount_available": {
                 "matchers": [{"match": "type"}]

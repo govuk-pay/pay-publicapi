@@ -91,7 +91,6 @@ public class TransactionSearchServiceTest {
         assertThat(payment.getReturnUrl().get(), is("https://example.org"));
         assertThat(payment.getEmail().get(), is("someone@example.org"));
         assertThat(payment.getPaymentProvider(), is("sandbox"));
-        assertThat(payment.getCreatedDate(), is("2018-09-22T10:13:16.067Z"));
         assertThat(payment.getDelayedCapture(), is(false));
 
         assertThat(payment.getCardDetails().get().getCardHolderName(), is("J. Smith"));

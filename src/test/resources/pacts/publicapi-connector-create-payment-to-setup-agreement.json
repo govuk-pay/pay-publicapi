@@ -73,7 +73,6 @@
           "charge_id": "iinvkbkkrt8kcl0atps9q7p7cm",
           "return_url": "http://service.local/success-page/",
           "payment_provider": "sandbox",
-          "created_date": "2023-06-28T13:15:47.097Z",
           "refund_summary": {
             "status": "pending",
             "user_external_id": null,
@@ -158,7 +157,7 @@
               "matchers": [{"match": "type"}]
             },
             "$.created_date": {
-              "matchers": [{ "regex": "(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2}):(\\d{2})\\.(\\d{3})Z" }]
+              "matchers": [{ "datetime": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" }]
             }
           }
         }

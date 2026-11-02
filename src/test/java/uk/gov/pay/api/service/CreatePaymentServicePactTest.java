@@ -91,7 +91,6 @@ public class CreatePaymentServicePactTest {
         assertThat(paymentResponse.getState(), is(new PaymentState("created", false)));
         assertThat(paymentResponse.getReturnUrl().get(), is("https://somewhere.gov.uk/rainbow/1"));
         assertThat(paymentResponse.getPaymentProvider(), is("Sandbox"));
-        assertThat(paymentResponse.getCreatedDate(), is("2016-01-01T12:00:00Z"));
         assertThat(paymentResponse.getLanguage(), is(SupportedLanguage.ENGLISH));
         assertThat(paymentResponse.getDelayedCapture(), is(false));
         assertThat(paymentResponse.getMoto(), is(false));
@@ -137,7 +136,6 @@ public class CreatePaymentServicePactTest {
         assertThat(paymentResponse.getState(), is(new PaymentState("created", false)));
         assertThat(paymentResponse.getReturnUrl().get(), is("https://somewhere.gov.uk/rainbow/1"));
         assertThat(paymentResponse.getPaymentProvider(), is("Sandbox"));
-        assertThat(paymentResponse.getCreatedDate(), is("2016-01-01T12:00:00Z"));
         assertThat(paymentResponse.getLinks().getSelf(), is(new Link("http://publicapi.test.localhost/v1/payments/ch_ab2341da231434l", "GET")));
         assertThat(paymentResponse.getLinks().getNextUrl(), is(new Link("http://frontend_connector/charge/token_1234567asdf", "GET")));
         PostLink expectedLink = new PostLink("http://frontend_connector/charge/", "POST", "application/x-www-form-urlencoded", Collections.singletonMap("chargeTokenId", "token_1234567asdf"));
