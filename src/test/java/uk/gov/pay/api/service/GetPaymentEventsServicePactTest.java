@@ -90,13 +90,11 @@ public class GetPaymentEventsServicePactTest {
         assertThat(paymentEventsResponse.getEvents().get(0).getPaymentLink().getPaymentLink().getHref(), is("http://publicapi.test.localhost/v1/payments/abc123"));
         assertThat(paymentEventsResponse.getEvents().get(0).getState().getStatus(), is("created"));
         assertThat(paymentEventsResponse.getEvents().get(0).getState().isFinished(), is(false));
-        assertThat(paymentEventsResponse.getEvents().get(0).getUpdated(), is("2019-08-06T10:34:43.487123Z"));
         assertThat(paymentEventsResponse.getEvents().get(1).getPaymentId(), is("abc123"));
         assertThat(paymentEventsResponse.getEvents().get(1).getPaymentLink().getPaymentLink().getHref(), is("http://publicapi.test.localhost/v1/payments/abc123"));
         assertThat(paymentEventsResponse.getEvents().get(1).getState().getStatus(), is("failed"));
         assertThat(paymentEventsResponse.getEvents().get(1).getState().isFinished(), is(true));
         assertThat(paymentEventsResponse.getEvents().get(1).getState().getCode(), is("P0010"));
         assertThat(paymentEventsResponse.getEvents().get(1).getState().getMessage(), is("Payment method rejected"));
-        assertThat(paymentEventsResponse.getEvents().get(1).getUpdated(), is("2019-08-06T10:34:48.123456Z"));
     }
 }

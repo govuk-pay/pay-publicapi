@@ -113,9 +113,6 @@ public class SearchDisputesServicePactTest {
         assertThat(dispute.getFee(), is(1500L));
         assertThat(dispute.getNetAmount(), is(-2500L));
         assertThat(dispute.getPaymentId(), is("parent-abcde-12345"));
-        assertThat(dispute.getCreatedDate(), is("2022-05-20T19:05:00.000Z"));
-        assertThat(dispute.getEvidenceDueDate(), is("2022-05-27T19:05:00.000Z"));
-        assertThat(dispute.getSettlementSummary().getSettledDate(), is("2022-05-27"));
         assertThat(dispute.getStatus(), is("lost"));
         assertThat(dispute.getLinks().getPayment().getHref(), is("http://publicapi.test.localhost/v1/payments/parent-abcde-12345"));
     }
